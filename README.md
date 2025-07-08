@@ -1,55 +1,44 @@
 # Astro Data Visualization
 
-Simple Python scripts for visualizing astronomical data. This repository is for personal educational projects and explorations.
+A collection of Python scripts for visualizing astronomical data from the Kepler mission, showcasing different analysis approaches.
 
 ---
 
-## 1. `plot_light_curve.py` (Primary)
+### 1. `plot_full_light_curve.py` (Full Survey)
 
-A script to search, download, and plot a **real** light curve for a star from the NASA Kepler mission archive. It uses the `lightkurve` package to interact with real scientific data.
+A universal script to search, download, and plot the **complete** Kepler light curve for any star. Ideal for finding long-period transits or analyzing long-term stellar variability. This is the primary tool of the repository.
 
-### Features
-- Searches for real data on the MAST archive for a given Kepler ID.
-- Downloads the FITS file.
-- Processes and cleans the data (normalizes flux, removes outliers).
-- Plots the light curve using `Matplotlib` and saves it as a PNG file.
-
-### Usage
-To run the script, you need Python and the following libraries installed:
+**Usage:**
+This script is run from the command line with parameters.
 
 ```bash
+# Install dependencies
 pip install lightkurve matplotlib
+
+# Run for a specific star (KIC ID and Name)
+python plot_full_light_curve.py 8311864 "Kepler-452"
 ```
+### 2. quick_analyze_quarter.py (Quick Analysis)
+A script to download and plot data for a single observation quarter. Perfect for a quick, detailed look at a specific event. To analyze a different star or quarter, simply edit the parameters at the bottom of the script file.
 
-Then, run the script from your terminal:
-
+**Usage:**
 ```bash
-python plot_light_curve.py
+
+# Dependencies are the same
+pip install lightkurve matplotlib
+
+# Run the script
+python quick_analyze_quarter.py
 ```
+### 3. `synthetic_plot_light_curve.py` (Synthetic Data)
+A simple script that generates and plots a synthetic light curve. It does not require an internet connection and is useful for quick tests or demonstrating the concept of a planetary transit.
 
-This will download data and generate a plot named `real_light_curve_8462852_Q16.png`.
-
----
-
-## 2. `synthetic_plot_light_curve.py` (Test/Demo)
-
-A script to generate and plot a sample light curve with synthetic data. Useful for quick tests without network access.
-
-### Features
-- Generates synthetic data mimicking a stellar light curve with a planetary transit.
-- Uses NumPy and Matplotlib.
-
-### Usage
-Install dependencies:
-
+**Usage:**
 ```bash
+
+# Install dependencies
 pip install numpy matplotlib
-```
 
-Run the script:
-
-```bash
+# Run the script
 python synthetic_plot_light_curve.py
 ```
-
-This will generate a plot named `light_curve_8462852.png`.

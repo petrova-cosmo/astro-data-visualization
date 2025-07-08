@@ -1,21 +1,43 @@
-Astro Data Visualization
+# Astro Data Visualization
+
 Simple Python scripts for visualizing astronomical data. This repository is for personal educational projects and explorations.
 
-plot_light_curve.py
-A script to generate and plot a sample light curve for a star from the Kepler mission dataset.
+---
 
-Features
-Generates synthetic data mimicking a real stellar light curve with a planetary transit.
-Uses standard scientific libraries: NumPy for data handling and Matplotlib for plotting.
-Saves the resulting plot as a PNG file.
+## 1. `plot_real_data_light_curve.py` (Recommended)
 
-Usage
+A script to search, download, and plot a real light curve for a star from the NASA Kepler mission archive. It uses the `lightkurve` package to interact with real scientific data.
+
+### Features
+- Searches for real data on the MAST archive for a given Kepler ID.
+- Downloads the FITS file.
+- Processes and cleans the data (normalizes flux, removes outliers).
+- Plots the light curve using `Matplotlib` and saves it as a PNG file.
+
+### Usage
 To run the script, you need Python and the following libraries installed:
+```bash
+pip install lightkurve matplotlib
+Then, run the script from your terminal:
 
 Bash
 
+python plot_real_data_light_curve.py
+This will download data and generate a plot named real_light_curve_8462852_Q16.png.
+
+2. plot_light_curve.py (Synthetic Data)
+A script to generate and plot a sample light curve with synthetic data. Useful for quick tests without network access.
+
+Features
+Generates synthetic data mimicking a stellar light curve with a planetary transit.
+
+Uses NumPy and Matplotlib.
+
+Usage
+Bash
+
 pip install numpy matplotlib
-Then, simply run the script from your terminal:
+Run the script:
 
 Bash
 

@@ -25,15 +25,15 @@ Bash
 python plot_real_data_light_curve.py
 This will download data and generate a plot named real_light_curve_8462852_Q16.png.
 
-2. plot_light_curve.py (Synthetic Data)
+## 2. plot_light_curve.py (Synthetic Data)
 A script to generate and plot a sample light curve with synthetic data. Useful for quick tests without network access.
 
-Features
+### Features
 Generates synthetic data mimicking a stellar light curve with a planetary transit.
 
 Uses NumPy and Matplotlib.
 
-Usage
+### Usage
 Bash
 
 pip install numpy matplotlib

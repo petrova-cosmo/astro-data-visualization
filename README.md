@@ -4,9 +4,9 @@ Simple Python scripts for visualizing astronomical data. This repository is for 
 
 ---
 
-## 1. `plot_real_data_light_curve.py` (Recommended)
+## 1. `plot_light_curve.py` (Primary)
 
-A script to search, download, and plot a real light curve for a star from the NASA Kepler mission archive. It uses the `lightkurve` package to interact with real scientific data.
+A script to search, download, and plot a **real** light curve for a star from the NASA Kepler mission archive. It uses the `lightkurve` package to interact with real scientific data.
 
 ### Features
 - Searches for real data on the MAST archive for a given Kepler ID.
@@ -16,30 +16,40 @@ A script to search, download, and plot a real light curve for a star from the NA
 
 ### Usage
 To run the script, you need Python and the following libraries installed:
+
 ```bash
 pip install lightkurve matplotlib
+```
+
 Then, run the script from your terminal:
 
-Bash
+```bash
+python plot_light_curve.py
+```
 
-python plot_real_data_light_curve.py
-This will download data and generate a plot named real_light_curve_8462852_Q16.png.
+This will download data and generate a plot named `real_light_curve_8462852_Q16.png`.
 
-## 2. plot_light_curve.py (Synthetic Data)
+---
+
+## 2. `synthetic_plot_light_curve.py` (Test/Demo)
+
 A script to generate and plot a sample light curve with synthetic data. Useful for quick tests without network access.
 
 ### Features
-Generates synthetic data mimicking a stellar light curve with a planetary transit.
-
-Uses NumPy and Matplotlib.
+- Generates synthetic data mimicking a stellar light curve with a planetary transit.
+- Uses NumPy and Matplotlib.
 
 ### Usage
-Bash
+Install dependencies:
 
+```bash
 pip install numpy matplotlib
+```
+
 Run the script:
 
-Bash
+```bash
+python synthetic_plot_light_curve.py
+```
 
-python plot_light_curve.py
-This will generate a plot named light_curve_8462852.png.
+This will generate a plot named `light_curve_8462852.png`.
